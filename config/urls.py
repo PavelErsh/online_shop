@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin 
 from django.urls import path, include #include Для связи с urls.py в папке games
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('', include('games.urls')),#подключаем urls из games
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

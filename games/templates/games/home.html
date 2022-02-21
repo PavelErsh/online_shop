@@ -12,6 +12,12 @@ Game Shop
         <div>
             <h2>{{game.title}}</h2>
         </div>
+            {% if game.image %}
+            
+                <img src="{{ game.image.url }}">
+
+            {% endif %}
+
             <p>Игра добавлена пользователем {{ game.owner }} {{ game.created }}</p>
 
             <p>Дата последнего обновления записи: {{ game.updated }}</p>

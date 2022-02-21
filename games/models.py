@@ -11,6 +11,7 @@ class Game(models.Model):
     created = models.DateTimeField(auto_now_add = True)
     updated = models.DateTimeField(auto_now_add = True)
     #поля created и updated автоматически наполняются необходимыми данными
+    image = models.ImageField(blank=True)#image
     
     def __str__(self):#Функция для того что бы были видны названия наших игр
         return f'{self.title}'
